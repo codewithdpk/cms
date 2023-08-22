@@ -30,8 +30,8 @@ pnpm run start:dev
 ### Admin Frontend
 
 ```
-# Navigate to admin directory
-cd admin
+# Navigate to admin-front directory
+cd admin-front
 
 # Install required dependancies
 pnpm install

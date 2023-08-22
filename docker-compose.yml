@@ -15,7 +15,7 @@ services:
 
   admin:
     build:
-      context: ./admin
+      context: ./admin-front
       dockerfile: ./core/Dockerfile.admin
     container_name: cms-admin
     restart: always
