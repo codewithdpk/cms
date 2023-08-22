@@ -1,0 +1,42 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: ./core
+      dockerfile: ./core/Dockerfile.core
+    container_name: cms-core
+    restart: always
+    ports:
+      - 3000:3000
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+
+  admin:
+    build:
+      context: ./admin
+      dockerfile: ./core/Dockerfile.admin
+    container_name: cms-admin
+    restart: always
+    ports:
+      - 4000:4000
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+
+  postgres:
+    image: postgres:14
+    container_name: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    env_file:
+      - .env
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+volumes:
+  postgres:
+    name: postgres
