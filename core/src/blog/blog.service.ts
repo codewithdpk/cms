@@ -8,7 +8,7 @@ export class BlogService {
   constructor(private prisma: PrismaClient) { }
 
   async create(createBlogDto: CreateBlogDto) {
-    await this.prisma.blog.create({
+    return await this.prisma.blog.create({
       data: {
         slug: createBlogDto.title.split(" ").join("-").toLowerCase(),
         url: "/" + createBlogDto.title.split(" ").join("-").toLowerCase(),
