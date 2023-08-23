@@ -2,10 +2,13 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '@/styles/Home.module.css'
 import { Button } from '@mui/joy'
-import { signIn } from 'next-auth/react'
+import { signIn, useSession } from 'next-auth/react'
 
 
 export default function Home() {
+
+  const { data: session } = useSession()
+
   return (
     <>
       <Head>
@@ -17,8 +20,8 @@ export default function Home() {
       <main className={`${styles.main}`}>
         <div className={styles.description}>
           <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>src/pages/index.tsx</code>
+            Access token&nbsp;
+            <code className={styles.code}>{session?.accessToken}</code>
           </p>
           <div>
             <a
@@ -107,9 +110,11 @@ export default function Home() {
               with&nbsp;Vercel.
             </p>
           </a>
-          <Button onClick={()=>signIn()}>
-            Login
-          </Button>
+          {!session &&
+            <Button onClick={() => signIn()}>
+              Login
+            </Button>
+          }
         </div>
       </main>
     </>
