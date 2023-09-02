@@ -1,0 +1,30 @@
+{
+  "name": "cms-project",
+  "version": "1.0.0",
+  "description": "A selfhosted headless cms for blogging websites.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.48.0",
+    "husky": "^8.0.0",
+    "prettier": "^3.0.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "pnpm run build"
+    }
+  },
+  "lint-staged": {
+    "*.{js,tsx,ts}": [
+      "prettier --write",
+      "eslint"
+    ]
+  }
+}
