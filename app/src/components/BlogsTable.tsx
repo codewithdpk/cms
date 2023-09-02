@@ -29,18 +29,24 @@ const BlogsTable = () => {
             data?.length &&
             data.map((blog) => {
               return (
-                <tr key={blog?.id}>
-                  <td className="px-6 py-4 whitespace-nowrap border-b border-gray-200">
-                    <span> {blog?.title}</span>
+                <tr key={blog?.id} className="border-b border-gray-200">
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <span className="text-xs font-light"> {blog?.title}</span>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap border-b border-gray-200">
-                    {blog?.userId}
+                  <td className="px-6 py-4 whitespace-nowrap flex flex-row justify-start">
+                    <div className="relative rounded-full px-1 py-1 text-xs text-center leading-6 text-gray-600 ring-1 ring-gray-900/10">
+                      {blog?.userId}
+                    </div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap border-b border-gray-200">
-                    {blog?.url}
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <code className="cursor-pointer font-mono text-xs border-gray-300 bg-gradient-to-b from-zinc-200 p-1 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit  lg:rounded-md lg:border lg:bg-gray-200 lg:p-1 lg:dark:bg-zinc-800/30">
+                      {blog?.url}
+                    </code>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap border-b border-gray-200">
-                    Row 1, Column 2
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <button className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-normal text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                      Delete Post
+                    </button>
                   </td>
                 </tr>
               );

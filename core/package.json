@@ -22,8 +22,7 @@
     "migrate:deploy": "pnpx prisma migrate deploy",
     "prisma:generate": "pnpx prisma generate",
     "prisma:studio": "pnpx prisma studio",
-    "prisma:seed": "pnpx prisma db seed",
-    "prepare": "husky install"
+    "prisma:seed": "pnpx prisma db seed"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
