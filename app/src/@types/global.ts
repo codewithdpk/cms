@@ -10,3 +10,10 @@ export interface Blog {
   updatedAt: string;
   expiredAt: string;
 }
+
+export interface SaveBlogPayload {
+  title: string;
+  subtitle: string;
+  userId: string;
+  content: string;
+}

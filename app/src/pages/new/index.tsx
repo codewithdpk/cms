@@ -1,14 +1,27 @@
 import Page from "@/components/Page";
+import useSaveBlog from "@/hooks/saveBlog";
 import { Editor } from "novel";
 import { useState } from "react";
 
 export default function NewPost() {
   const [content, setContent] = useState(null);
+
+  const { mutate, data } = useSaveBlog();
+
   function onEditUpdateHandle(updatedContent: any) {
     setContent(updatedContent);
   }
 
-  function saveContent() {}
+  function saveContent() {
+    mutate({
+      title: "My new Blog",
+      subtitle: "My new Blog",
+      userId: "0xdeepak",
+      content: content || "",
+    });
+  }
+
+  console.log(data);
 
   return (
     <Page title="Home">
@@ -19,6 +32,7 @@ export default function NewPost() {
           <button
             type="button"
             className="px-3 py-2.5 text-sm font-medium text-white inline-flex items-center bg-indigo-700 hover:bg-indigo-800 focus:outline-none rounded-lg text-center dark:bg-indigo-600 dark:hover:bg-indigo-700"
+            onClick={saveContent}
           >
             Publish New
             <svg
