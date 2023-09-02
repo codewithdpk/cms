@@ -7,6 +7,5 @@ type PageProps = {
 };
 
 export default function Page({ children, title }: PageProps) {
-  console.log("This is a page");
   return <DashboardLayout pageTitle={title}>{children}</DashboardLayout>;
 }
