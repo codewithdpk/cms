@@ -5,6 +5,6 @@ import { PrismaClient } from '@prisma/client';
 
 @Module({
   controllers: [BlogController],
-  providers: [BlogService, PrismaClient]
+  providers: [BlogService, PrismaClient],
 })
-export class BlogModule { }
+export class BlogModule {}

@@ -3,9 +3,8 @@ const Sidebar = () => {
     <aside className="bg-gray-800 text-white w-64">
       <nav>
         <div className=" flex flex-col gap-y-2">
-          <div className="group h-20 relative flex items-center gap-x-6 rounded-lg px-2 text-sm leading-6">
-            <h1 className="text-4xl font-extrabold dark:text-white">
-              {" "}
+          <div className="h-20 px-2 text-center flex flex-col align-center justify-center">
+            <h1 className="text-3xl font-extrabold dark:text-white">
               Alpha CMS
             </h1>
           </div>

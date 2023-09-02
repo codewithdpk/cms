@@ -1,7 +1,6 @@
 ## Headless CMS
 
-A selfhosted headless cms for blogging websites. 
-
+A selfhosted headless cms for blogging websites.
 
 ## Installation
 
@@ -39,4 +38,3 @@ pnpm install
 # Start dev server
 pnpm run dev
 ```
-

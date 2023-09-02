@@ -5,7 +5,7 @@ const BlogsTable = () => {
   const { data } = useGetAllBlogs();
 
   return (
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto py-4">
       <table className="min-w-full bg-white rounded-lg">
         <thead>
           <tr>

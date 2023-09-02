@@ -1,4 +1,13 @@
-import { Body, Controller, Delete, Get, HttpStatus, Logger, Param, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  HttpStatus,
+  Logger,
+  Param,
+  Post,
+} from '@nestjs/common';
 import { HttpError } from 'src/utils/error';
 import { BlogService } from './blog.service';
 import { CreateBlogDto, CreateBlogDtoSchema } from './dto/create-blog.dto';
@@ -6,14 +15,12 @@ import { CreateBlogDto, CreateBlogDtoSchema } from './dto/create-blog.dto';
 @Controller('blog')
 export class BlogController {
   private readonly logger = new Logger(BlogController.name);
-  constructor(private readonly blogService: BlogService) { }
+  constructor(private readonly blogService: BlogService) {}
 
   @Post('new')
   async create(@Body() createBlogDto: CreateBlogDto) {
-
     try {
-      await CreateBlogDtoSchema.validateAsync(createBlogDto)
-
+      await CreateBlogDtoSchema.validateAsync(createBlogDto);
     } catch (e) {
       this.logger.log(
         HttpStatus.PRECONDITION_FAILED,
@@ -24,7 +31,6 @@ export class BlogController {
         `Inside ${this.create.name}:Invalid Request object`,
       );
     }
-
 
     return this.blogService.create(createBlogDto);
   }
