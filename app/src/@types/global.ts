@@ -17,3 +17,10 @@ export interface SaveBlogPayload {
   userId: string;
   content: string;
 }
+
+export type ColorVariants =
+  | "primary"
+  | "success"
+  | "secondary"
+  | "danger"
+  | "warning";
